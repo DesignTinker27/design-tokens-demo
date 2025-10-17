@@ -1,0 +1,138 @@
+/* Button Component using Qualia Design Tokens */
+
+.qualia-btn {
+  /* Base styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  box-sizing: border-box;
+  
+  /* Focus styles */
+  &:focus {
+    outline: 2px solid var(--interactive-primary);
+    outline-offset: 2px;
+  }
+  
+  /* Disabled styles */
+  &:disabled,
+  &.qualia-btn--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+/* Variant Styles */
+.qualia-btn--primary {
+  background-color: var(--interactive-primary);
+  color: var(--text-inverse);
+  border-color: var(--interactive-primary);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--interactive-primary-hover);
+    border-color: var(--interactive-primary-hover);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: var(--interactive-primary-active);
+    border-color: var(--interactive-primary-active);
+  }
+}
+
+.qualia-btn--secondary {
+  background-color: var(--interactive-secondary);
+  color: var(--text-primary);
+  border-color: var(--surface-border);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--interactive-secondary-hover);
+    border-color: var(--primitive-gray-300);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: var(--interactive-secondary-active);
+    border-color: var(--primitive-gray-400);
+  }
+}
+
+.qualia-btn--destructive {
+  background-color: var(--interactive-destructive);
+  color: var(--text-inverse);
+  border-color: var(--interactive-destructive);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--interactive-destructive-hover);
+    border-color: var(--interactive-destructive-hover);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: var(--interactive-destructive-active);
+    border-color: var(--interactive-destructive-active);
+  }
+}
+
+.qualia-btn--success {
+  background-color: var(--interactive-success);
+  color: var(--text-inverse);
+  border-color: var(--interactive-success);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--interactive-success-hover);
+    border-color: var(--interactive-success-hover);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: var(--interactive-success-active);
+    border-color: var(--interactive-success-active);
+  }
+}
+
+.qualia-btn--ai {
+  background-color: var(--interactive-ai);
+  color: var(--text-inverse);
+  border-color: var(--interactive-ai);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--interactive-ai-hover);
+    border-color: var(--interactive-ai-hover);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: var(--interactive-ai-active);
+    border-color: var(--interactive-ai-active);
+  }
+}
+
+/* Size Styles */
+.qualia-btn--sm {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-sm);
+  min-height: 32px;
+}
+
+.qualia-btn--md {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-md);
+  border-radius: var(--border-radius-md);
+  min-height: 40px;
+}
+
+.qualia-btn--lg {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-lg);
+  border-radius: var(--border-radius-lg);
+  min-height: 48px;
+}
+
+/* Width modifier */
+.qualia-btn--full {
+  width: 100%;
+}

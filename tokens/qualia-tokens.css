@@ -1,0 +1,144 @@
+/* Qualia Design System Tokens - CSS Custom Properties */
+/* Generated for engineering consumption */
+
+:root {
+  /* Primitive Colors */
+  --primitive-white: #FFFFFF;
+  --primitive-black: #000000;
+  --primitive-gray-50: #F9FAFB;
+  --primitive-gray-100: #F3F4F6;
+  --primitive-gray-200: #E5E7EB;
+  --primitive-gray-300: #D1D5DB;
+  --primitive-gray-400: #9CA3AF;
+  --primitive-gray-500: #6B7280;
+  --primitive-gray-600: #4B5563;
+  --primitive-gray-700: #374151;
+  --primitive-gray-800: #1F2937;
+  --primitive-gray-900: #111827;
+  --primitive-red-50: #FEF2F2;
+  --primitive-red-100: #FEE2E2;
+  --primitive-red-200: #FECACA;
+  --primitive-red-300: #FCA5A5;
+  --primitive-red-400: #F87171;
+  --primitive-red-500: #EF4444;
+  --primitive-red-600: #DC2626;
+  --primitive-red-700: #B91C1C;
+  --primitive-red-800: #991B1B;
+  --primitive-red-900: #7F1D1D;
+  --primitive-green-50: #F0FDF4;
+  --primitive-green-100: #DCFCE7;
+  --primitive-green-200: #BBF7D0;
+  --primitive-green-300: #86EFAC;
+  --primitive-green-400: #4ADE80;
+  --primitive-green-500: #22C55E;
+  --primitive-green-600: #16A34A;
+  --primitive-green-700: #15803D;
+  --primitive-green-800: #166534;
+  --primitive-green-900: #14532D;
+  --primitive-blue-50: #EFF6FF;
+  --primitive-blue-100: #DBEAFE;
+  --primitive-blue-200: #BFDBFE;
+  --primitive-blue-300: #93C5FD;
+  --primitive-blue-400: #60A5FA;
+  --primitive-blue-500: #3B82F6;
+  --primitive-blue-600: #2563EB;
+  --primitive-blue-700: #1D4ED8;
+  --primitive-blue-800: #1E40AF;
+  --primitive-blue-900: #1E3A8A;
+  --primitive-orange-50: #FFF7ED;
+  --primitive-orange-100: #FFEDD5;
+  --primitive-orange-200: #FED7AA;
+  --primitive-orange-300: #FDBA74;
+  --primitive-orange-400: #FB923C;
+  --primitive-orange-500: #F97316;
+  --primitive-orange-600: #EA580C;
+  --primitive-orange-700: #C2410C;
+  --primitive-orange-800: #9A3412;
+  --primitive-orange-900: #7C2D12;
+
+  /* Brand Colors */
+  --brand-primary: #22C55E;
+  --brand-secondary: #16A34A;
+  --brand-accent: #86EFAC;
+
+  /* Semantic Colors */
+  --semantic-success: var(--primitive-green-600);
+  --semantic-warning: var(--primitive-orange-500);
+  --semantic-error: var(--primitive-red-600);
+  --semantic-info: var(--primitive-blue-500);
+  
+  /* Interactive Colors */
+  --interactive-primary: var(--brand-primary);
+  --interactive-primary-hover: var(--brand-secondary);
+  --interactive-primary-active: var(--primitive-green-700);
+  --interactive-secondary: var(--primitive-gray-100);
+  --interactive-secondary-hover: var(--primitive-gray-200);
+  --interactive-secondary-active: var(--primitive-gray-300);
+  --interactive-destructive: var(--primitive-red-600);
+  --interactive-destructive-hover: var(--primitive-red-700);
+  --interactive-destructive-active: var(--primitive-red-800);
+  --interactive-success: var(--primitive-green-600);
+  --interactive-success-hover: var(--primitive-green-700);
+  --interactive-success-active: var(--primitive-green-800);
+  --interactive-ai: var(--primitive-blue-600);
+  --interactive-ai-hover: var(--primitive-blue-700);
+  --interactive-ai-active: var(--primitive-blue-800);
+  
+  /* Surface Colors */
+  --surface-background: var(--primitive-white);
+  --surface-foreground: var(--primitive-gray-900);
+  --surface-muted: var(--primitive-gray-50);
+  --surface-card: var(--primitive-white);
+  --surface-border: var(--primitive-gray-200);
+  
+  /* Text Colors */
+  --text-primary: var(--primitive-gray-900);
+  --text-secondary: var(--primitive-gray-600);
+  --text-muted: var(--primitive-gray-400);
+  --text-inverse: var(--primitive-white);
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  
+  /* Typography */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+  
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Border Radius */
+  --border-radius-none: 0px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
