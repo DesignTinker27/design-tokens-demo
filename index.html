@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualia Design System - Tokens Visual Demo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        :root {
+            /* Primitive Colors */
+            --primitive-white: #FFFFFF;
+            --primitive-black: #000000;
+            --primitive-gray-50: #F9FAFB;
+            --primitive-gray-100: #F3F4F6;
+            --primitive-gray-200: #E5E7EB;
+            --primitive-gray-300: #D1D5DB;
+            --primitive-gray-400: #9CA3AF;
+            --primitive-gray-500: #6B7280;
+            --primitive-gray-600: #4B5563;
+            --primitive-gray-700: #374151;
+            --primitive-gray-800: #1F2937;
+            --primitive-gray-900: #111827;
+            --primitive-red-50: #FEF2F2;
+            --primitive-red-100: #FEE2E2;
+            --primitive-red-200: #FECACA;
+            --primitive-red-300: #FCA5A5;
+            --primitive-red-400: #F87171;
+            --primitive-red-500: #EF4444;
+            --primitive-red-600: #DC2626;
+            --primitive-red-700: #B91C1C;
+            --primitive-red-800: #991B1B;
+            --primitive-red-900: #7F1D1D;
+            --primitive-green-50: #F0FDF4;
+            --primitive-green-100: #DCFCE7;
+            --primitive-green-200: #BBF7D0;
+            --primitive-green-300: #86EFAC;
+            --primitive-green-400: #4ADE80;
+            --primitive-green-500: #22C55E;
+            --primitive-green-600: #16A34A;
+            --primitive-green-700: #15803D;
+            --primitive-green-800: #166534;
+            --primitive-green-900: #14532D;
+            --primitive-blue-50: #EFF6FF;
+            --primitive-blue-100: #DBEAFE;
+            --primitive-blue-200: #BFDBFE;
+            --primitive-blue-300: #93C5FD;
+            --primitive-blue-400: #60A5FA;
+            --primitive-blue-500: #3B82F6;
+            --primitive-blue-600: #2563EB;
+            --primitive-blue-700: #1D4ED8;
+            --primitive-blue-800: #1E40AF;
+            --primitive-blue-900: #1E3A8A;
+            --primitive-orange-50: #FFF7ED;
+            --primitive-orange-100: #FFEDD5;
+            --primitive-orange-200: #FED7AA;
+            --primitive-orange-300: #FDBA74;
+            --primitive-orange-400: #FB923C;
+            --primitive-orange-500: #F97316;
+            --primitive-orange-600: #EA580C;
+            --primitive-orange-700: #C2410C;
+            --primitive-orange-800: #9A3412;
+            --primitive-orange-900: #7C2D12;
+
+            /* Brand Colors */
+            --brand-primary: #22C55E;
+            --brand-secondary: #16A34A;
+            --brand-accent: #86EFAC;
+
+            /* Semantic Colors */
+            --semantic-success: var(--primitive-green-600);
+            --semantic-warning: var(--primitive-orange-500);
+            --semantic-error: var(--primitive-red-600);
+            --semantic-info: var(--primitive-blue-500);
+            
+            /* Interactive Colors */
+            --interactive-primary: var(--brand-primary);
+            --interactive-primary-hover: var(--brand-secondary);
+            --interactive-primary-active: var(--primitive-green-700);
+            --interactive-secondary: var(--primitive-gray-100);
+            --interactive-secondary-hover: var(--primitive-gray-200);
+            --interactive-secondary-active: var(--primitive-gray-300);
+            --interactive-destructive: var(--primitive-red-600);
+            --interactive-destructive-hover: var(--primitive-red-700);
+            --interactive-destructive-active: var(--primitive-red-800);
+            --interactive-success: var(--primitive-green-600);
+            --interactive-success-hover: var(--primitive-green-700);
+            --interactive-success-active: var(--primitive-green-800);
+            --interactive-ai: var(--primitive-blue-600);
+            --interactive-ai-hover: var(--primitive-blue-700);
+            --interactive-ai-active: var(--primitive-blue-800);
+            
+            /* Surface Colors */
+            --surface-background: var(--primitive-white);
+            --surface-foreground: var(--primitive-gray-900);
+            --surface-muted: var(--primitive-gray-50);
+            --surface-card: var(--primitive-white);
+            --surface-border: var(--primitive-gray-200);
+            
+            /* Text Colors */
+            --text-primary: var(--primitive-gray-900);
+            --text-secondary: var(--primitive-gray-600);
+            --text-muted: var(--primitive-gray-400);
+            --text-inverse: var(--primitive-white);
+            
+            /* Spacing */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            
+            /* Typography */
+            --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+            
+            --font-size-xs: 12px;
+            --font-size-sm: 14px;
+            --font-size-md: 16px;
+            --font-size-lg: 18px;
+            --font-size-xl: 20px;
+            --font-size-2xl: 24px;
+            --font-size-3xl: 30px;
+            --font-size-4xl: 36px;
+            
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            --line-height-tight: 1.25;
+            --line-height-normal: 1.5;
+            --line-height-relaxed: 1.75;
+            
+            /* Border Radius */
+            --border-radius-none: 0px;
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-xl: 16px;
+            --border-radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: var(--font-family-primary);
+            line-height: var(--line-height-normal);
+            color: var(--text-primary);
+            background-color: var(--surface-background);
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--surface-card);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: var(--font-weight-semibold);
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        h1 { font-size: var(--font-size-4xl); }
+        h2 { font-size: var(--font-size-3xl); }
+        h3 { font-size: var(--font-size-2xl); }
+        h4 { font-size: var(--font-size-xl); }
+        h5 { font-size: var(--font-size-lg); }
+        h6 { font-size: var(--font-size-md); }
+
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--surface-border);
+        }
+
+        .token-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+
+        .token-item {
+            background-color: var(--surface-muted);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            border: 1px solid var(--surface-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .token-swatch {
+            width: 100%;
+            height: 80px;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--surface-border);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-sm);
+            color: var(--text-primary);
+            font-weight: var(--font-weight-medium);
+        }
+        .token-swatch.text-light { color: var(--primitive-white); }
+
+        .token-name {
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+
+        .token-value {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-xs);
+            color: var(--text-primary);
+            word-break: break-all;
+        }
+        
+        .token-description {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-top: var(--spacing-sm);
+        }
+
+        /* Specific styles for spacing tokens */
+        .spacing-demo {
+            height: 20px; /* Base height for all spacing rectangles */
+            background-color: var(--brand-primary); /* Qualia green */
+            border-radius: var(--border-radius-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Specific styles for border radius tokens */
+        .border-radius-demo {
+            width: 80px;
+            height: 80px;
+            background-color: var(--brand-primary); /* Qualia green */
+            margin-bottom: var(--spacing-sm);
+            border: 1px solid var(--surface-border);
+        }
+
+        /* Typography examples */
+        .typography-example {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--border-radius-md);
+            background-color: var(--surface-muted);
+        }
+        .typography-example .label {
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
+        }
+        .typography-example .text-preview {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        .typography-example .code-preview {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-xs);
+            color: var(--text-secondary);
+            background-color: var(--primitive-gray-100);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            word-break: break-all;
+        }
+
+        /* Decision Tree / Red Flags */
+        .guidelines-section {
+            margin-top: 3rem;
+            background-color: var(--surface-muted);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--surface-border);
+        }
+
+        .guidelines-section h3 {
+            color: var(--text-primary);
+            font-size: var(--font-size-2xl);
+            margin-top: 0;
+        }
+
+        .guidelines-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .guidelines-section li {
+            margin-bottom: var(--spacing-md);
+            line-height: var(--line-height-normal);
+            color: var(--text-primary);
+        }
+        .guidelines-section .icon {
+            margin-right: var(--spacing-sm);
+            font-size: var(--font-size-lg);
+            vertical-align: middle;
+        }
+        .guidelines-section .icon-check { color: var(--semantic-success); }
+        .guidelines-section .icon-x { color: var(--semantic-error); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Qualia Design System - Tokens Visual Demo</h1>
+        <p>This interactive page provides a visual representation of all design tokens within the Qualia Design System. It is intended for designers to quickly understand and apply the system's foundational elements.</p>
+
+        <div class="section" id="colors">
+            <h2>Colors</h2>
+
+            <h3>Primitive Colors</h3>
+            <p class="token-description">The foundational building blocks of our color palette. **Do not use directly in production components; always reference semantic or interactive tokens.**</p>
+            <div class="token-group">
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-white); border-color: var(--primitive-gray-200);"></div>
+                    <span class="token-name">--primitive-white</span>
+                    <span class="token-value">#FFFFFF</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--primitive-black);"></div>
+                    <span class="token-name">--primitive-black</span>
+                    <span class="token-value">#000000</span>
+                </div>
+                <!-- Grays -->
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-gray-50);"></div>
+                    <span class="token-name">--primitive-gray-50</span>
+                    <span class="token-value">#F9FAFB</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-gray-100);"></div>
+                    <span class="token-name">--primitive-gray-100</span>
+                    <span class="token-value">#F3F4F6</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-gray-200);"></div>
+                    <span class="token-name">--primitive-gray-200</span>
+                    <span class="token-value">#E5E7EB</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-gray-300);"></div>
+                    <span class="token-name">--primitive-gray-300</span>
+                    <span class="token-value">#D1D5DB</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-gray-400);"></div>
+                    <span class="token-name">--primitive-gray-400</span>
+                    <span class="token-value">#9CA3AF</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-gray-500);"></div>
+                    <span class="token-name">--primitive-gray-500</span>
+                    <span class="token-value">#6B7280</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--primitive-gray-600);"></div>
+                    <span class="token-name">--primitive-gray-600</span>
+                    <span class="token-value">#4B5563</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--primitive-gray-700);"></div>
+                    <span class="token-name">--primitive-gray-700</span>
+                    <span class="token-value">#374151</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--primitive-gray-800);"></div>
+                    <span class="token-name">--primitive-gray-800</span>
+                    <span class="token-value">#1F2937</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--primitive-gray-900);"></div>
+                    <span class="token-name">--primitive-gray-900</span>
+                    <span class="token-value">#111827</span>
+                </div>
+                <!-- Red -->
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-red-50);"></div>
+                    <span class="token-name">--primitive-red-50</span>
+                    <span class="token-value">#FEF2F2</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-red-500);"></div>
+                    <span class="token-name">--primitive-red-500</span>
+                    <span class="token-value">#EF4444</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--primitive-red-600);"></div>
+                    <span class="token-name">--primitive-red-600</span>
+                    <span class="token-value">#DC2626</span>
+                </div>
+                <!-- Green -->
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-green-50);"></div>
+                    <span class="token-name">--primitive-green-50</span>
+                    <span class="token-value">#F0FDF4</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-green-500);"></div>
+                    <span class="token-name">--primitive-green-500</span>
+                    <span class="token-value">#22C55E</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--primitive-green-600);"></div>
+                    <span class="token-name">--primitive-green-600</span>
+                    <span class="token-value">#16A34A</span>
+                </div>
+                <!-- Blue -->
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-blue-50);"></div>
+                    <span class="token-name">--primitive-blue-50</span>
+                    <span class="token-value">#EFF6FF</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-blue-500);"></div>
+                    <span class="token-name">--primitive-blue-500</span>
+                    <span class="token-value">#3B82F6</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--primitive-blue-600);"></div>
+                    <span class="token-name">--primitive-blue-600</span>
+                    <span class="token-value">#2563EB</span>
+                </div>
+                <!-- Orange -->
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-orange-50);"></div>
+                    <span class="token-name">--primitive-orange-50</span>
+                    <span class="token-value">#FFF7ED</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--primitive-orange-500);"></div>
+                    <span class="token-name">--primitive-orange-500</span>
+                    <span class="token-value">#F97316</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--primitive-orange-600);"></div>
+                    <span class="token-name">--primitive-orange-600</span>
+                    <span class="token-value">#EA580C</span>
+                </div>
+            </div>
+
+            <h3>Brand Colors</h3>
+            <p class="token-description">Our core brand colors, used to establish Qualia's identity.</p>
+            <div class="token-group">
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--brand-primary);"></div>
+                    <span class="token-name">--brand-primary</span>
+                    <span class="token-value">#22C55E</span>
+                    <span class="token-description">Main brand color for primary actions.</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--brand-secondary);"></div>
+                    <span class="token-name">--brand-secondary</span>
+                    <span class="token-value">#16A34A</span>
+                    <span class="token-description">Supporting brand color, for hover states.</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--brand-accent);"></div>
+                    <span class="token-name">--brand-accent</span>
+                    <span class="token-value">#86EFAC</span>
+                    <span class="token-description">Light accent, used sparingly.</span>
+                </div>
+            </div>
+
+            <h3>Semantic Colors</h3>
+            <p class="token-description">Colors used to convey meaning and status within the UI.</p>
+            <div class="token-group">
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--semantic-success);"></div>
+                    <span class="token-name">--semantic-success</span>
+                    <span class="token-value">var(--primitive-green-600)</span>
+                    <span class="token-description">Confirmation messages, completed states.</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--semantic-warning);"></div>
+                    <span class="token-name">--semantic-warning</span>
+                    <span class="token-value">var(--primitive-orange-500)</span>
+                    <span class="token-description">Caution messages, pending states.</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--semantic-error);"></div>
+                    <span class="token-name">--semantic-error</span>
+                    <span class="token-value">var(--primitive-red-600)</span>
+                    <span class="token-description">Error messages, failed states.</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--semantic-info);"></div>
+                    <span class="token-name">--semantic-info</span>
+                    <span class="token-value">var(--primitive-blue-500)</span>
+                    <span class="token-description">Informational messages, neutral feedback.</span>
+                </div>
+            </div>
+
+            <h3>Interactive Colors</h3>
+            <p class="token-description">Colors for interactive elements, reflecting their state (e.g., hover, active).</p>
+            <div class="token-group">
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--interactive-primary);"></div>
+                    <span class="token-name">--interactive-primary</span>
+                    <span class="token-value">var(--brand-primary)</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--interactive-primary-hover);"></div>
+                    <span class="token-name">--interactive-primary-hover</span>
+                    <span class="token-value">var(--brand-secondary)</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--interactive-destructive);"></div>
+                    <span class="token-name">--interactive-destructive</span>
+                    <span class="token-value">var(--primitive-red-600)</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch text-light" style="background-color: var(--interactive-ai);"></div>
+                    <span class="token-name">--interactive-ai</span>
+                    <span class="token-value">var(--primitive-blue-600)</span>
+                </div>
+                <div class="token-item">
+                    <div class="token-swatch" style="background-color: var(--interactive-secondary);"></div>
+                    <span class="token-name">--interactive-secondary</span>
+                    <span class="token-value">var(--primitive-gray-100)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="typography">
+            <h2>Typography</h2>
+            <h3>Font Families</h3>
+            <div class="token-group" style="grid-template-columns: 1fr;">
+                <div class="typography-example">
+                    <div class="label">Primary Font Family</div>
+                    <div class="text-preview" style="font-family: var(--font-family-primary); font-size: var(--font-size-2xl);">The quick brown fox jumps over the lazy dog.</div>
+                    <div class="code-preview">--font-family-primary: 'Inter', -apple-system, ...</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">Monospace Font Family</div>
+                    <div class="text-preview" style="font-family: var(--font-family-mono); font-size: var(--font-size-xl);">`const variable = "value";`</div>
+                    <div class="code-preview">--font-family-mono: 'SF Mono', Monaco, ...</div>
+                </div>
+            </div>
+
+            <h3>Font Sizes</h3>
+            <div class="token-group" style="grid-template-columns: 1fr;">
+                <div class="typography-example">
+                    <div class="label">--font-size-4xl</div>
+                    <div class="text-preview" style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold);">Display Heading (36px)</div>
+                    <div class="code-preview">font-size: var(--font-size-4xl);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-size-3xl</div>
+                    <div class="text-preview" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold);">Hero Heading (30px)</div>
+                    <div class="code-preview">font-size: var(--font-size-3xl);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-size-2xl</div>
+                    <div class="text-preview" style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold);">Page Heading (24px)</div>
+                    <div class="code-preview">font-size: var(--font-size-2xl);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-size-xl</div>
+                    <div class="text-preview" style="font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold);">Section Heading (20px)</div>
+                    <div class="code-preview">font-size: var(--font-size-xl);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-size-lg</div>
+                    <div class="text-preview" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium);">Emphasized Text (18px)</div>
+                    <div class="code-preview">font-size: var(--font-size-lg);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-size-md</div>
+                    <div class="text-preview" style="font-size: var(--font-size-md); font-weight: var(--font-weight-normal);">Default Body Text (16px)</div>
+                    <div class="code-preview">font-size: var(--font-size-md);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-size-sm</div>
+                    <div class="text-preview" style="font-size: var(--font-size-sm); font-weight: var(--font-weight-normal);">Body Text (14px)</div>
+                    <div class="code-preview">font-size: var(--font-size-sm);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-size-xs</div>
+                    <div class="text-preview" style="font-size: var(--font-size-xs); font-weight: var(--font-weight-normal);">Captions (12px)</div>
+                    <div class="code-preview">font-size: var(--font-size-xs);</div>
+                </div>
+            </div>
+
+            <h3>Font Weights</h3>
+            <div class="token-group" style="grid-template-columns: 1fr;">
+                <div class="typography-example">
+                    <div class="label">--font-weight-bold (700)</div>
+                    <div class="text-preview" style="font-weight: var(--font-weight-bold);">Qualia Bold Text Example</div>
+                    <div class="code-preview">font-weight: var(--font-weight-bold);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-weight-semibold (600)</div>
+                    <div class="text-preview" style="font-weight: var(--font-weight-semibold);">Qualia Semibold Text Example</div>
+                    <div class="code-preview">font-weight: var(--font-weight-semibold);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-weight-medium (500)</div>
+                    <div class="text-preview" style="font-weight: var(--font-weight-medium);">Qualia Medium Text Example</div>
+                    <div class="code-preview">font-weight: var(--font-weight-medium);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--font-weight-normal (400)</div>
+                    <div class="text-preview" style="font-weight: var(--font-weight-normal);">Qualia Normal Text Example</div>
+                    <div class="code-preview">font-weight: var(--font-weight-normal);</div>
+                </div>
+            </div>
+
+            <h3>Line Heights</h3>
+            <div class="token-group" style="grid-template-columns: 1fr;">
+                <div class="typography-example">
+                    <div class="label">--line-height-tight (1.25)</div>
+                    <div class="text-preview" style="line-height: var(--line-height-tight);">
+                        This is an example of text with a tight line height. It is designed for compact headers or labels where vertical space is at a premium.
+                    </div>
+                    <div class="code-preview">line-height: var(--line-height-tight);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--line-height-normal (1.5)</div>
+                    <div class="text-preview" style="line-height: var(--line-height-normal);">
+                        This is an example of text with a normal line height. This is typically used for body copy to ensure readability and a balanced visual appearance.
+                    </div>
+                    <div class="code-preview">line-height: var(--line-height-normal);</div>
+                </div>
+                <div class="typography-example">
+                    <div class="label">--line-height-relaxed (1.75)</div>
+                    <div class="text-preview" style="line-height: var(--line-height-relaxed);">
+                        This is an example of text with a relaxed line height. Use this for more spacious layouts or content blocks to improve comfort during extended reading.
+                    </div>
+                    <div class="code-preview">line-height: var(--line-height-relaxed);</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="spacing">
+            <h2>Spacing</h2>
+            <p class="token-description">A consistent scale for all internal and external spacing, based on an 8px grid system.</p>
+            <div class="token-group">
+                <div class="token-item">
+                    <div class="spacing-demo" style="width: var(--spacing-xs);"></div>
+                    <span class="token-name">--spacing-xs</span>
+                    <span class="token-value">4px</span>
+                    <span class="token-description">Fine adjustments, tight spacing.</span>
+                </div>
+                <div class="token-item">
+                    <div class="spacing-demo" style="width: var(--spacing-sm);"></div>
+                    <span class="token-name">--spacing-sm</span>
+                    <span class="token-value">8px</span>
+                    <span class="token-description">Close relationships, form elements.</span>
+                </div>
+                <div class="token-item">
+                    <div class="spacing-demo" style="width: var(--spacing-md);"></div>
+                    <span class="token-name">--spacing-md</span>
+                    <span class="token-value">16px</span>
+                    <span class="token-description">Default spacing, comfortable reading.</span>
+                </div>
+                <div class="token-item">
+                    <div class="spacing-demo" style="width: var(--spacing-lg);"></div>
+                    <span class="token-name">--spacing-lg</span>
+                    <span class="token-value">24px</span>
+                    <span class="token-description">Section separation, card padding.</span>
+                </div>
+                <div class="token-item">
+                    <div class="spacing-demo" style="width: var(--spacing-xl);"></div>
+                    <span class="token-name">--spacing-xl</span>
+                    <span class="token-value">32px</span>
+                    <span class="token-description">Major sections, generous spacing.</span>
+                </div>
+                <div class="token-item">
+                    <div class="spacing-demo" style="width: var(--spacing-2xl);"></div>
+                    <span class="token-name">--spacing-2xl</span>
+                    <span class="token-value">48px</span>
+                    <span class="token-description">Page sections, hero areas.</span>
+                </div>
+                <div class="token-item">
+                    <div class="spacing-demo" style="width: var(--spacing-3xl);"></div>
+                    <span class="token-name">--spacing-3xl</span>
+                    <span class="token-value">64px</span>
+                    <span class="token-description">Large page sections, maximum spacing.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="border-radius">
+            <h2>Border Radius</h2>
+            <p class="token-description">Standardized border radii for consistent component styling.</p>
+            <div class="token-group">
+                <div class="token-item">
+                    <div class="border-radius-demo" style="border-radius: var(--border-radius-none);"></div>
+                    <span class="token-name">--border-radius-none</span>
+                    <span class="token-value">0px</span>
+                    <span class="token-description">Sharp edges, technical interfaces.</span>
+                </div>
+                <div class="token-item">
+                    <div class="border-radius-demo" style="border-radius: var(--border-radius-sm);"></div>
+                    <span class="token-name">--border-radius-sm</span>
+                    <span class="token-value">4px</span>
+                    <span class="token-description">Subtle rounding, form inputs.</span>
+                </div>
+                <div class="token-item">
+                    <div class="border-radius-demo" style="border-radius: var(--border-radius-md);"></div>
+                    <span class="token-name">--border-radius-md</span>
+                    <span class="token-value">8px</span>
+                    <span class="token-description">Standard rounding, buttons, cards.</span>
+                </div>
+                <div class="token-item">
+                    <div class="border-radius-demo" style="border-radius: var(--border-radius-lg);"></div>
+                    <span class="token-name">--border-radius-lg</span>
+                    <span class="token-value">12px</span>
+                    <span class="token-description">Prominent rounding, large buttons.</span>
+                </div>
+                <div class="token-item">
+                    <div class="border-radius-demo" style="border-radius: var(--border-radius-xl);"></div>
+                    <span class="token-name">--border-radius-xl</span>
+                    <span class="token-value">16px</span>
+                    <span class="token-description">Generous rounding, hero elements.</span>
+                </div>
+                <div class="token-item">
+                    <div class="border-radius-demo" style="border-radius: var(--border-radius-full);"></div>
+                    <span class="token-name">--border-radius-full</span>
+                    <span class="token-value">9999px</span>
+                    <span class="token-description">Pill shapes, avatar images.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="guidelines-section">
+            <h3>Red Flags - Don't Do This</h3>
+            <ul>
+                <li><span class="icon icon-x">❌</span> **Don't use primitive colors directly**: Always use semantic or interactive tokens in your designs and code. Primitive colors are for defining the system, not direct application.</li>
+                <li><span class="icon icon-x">❌</span> **Don't hardcode spacing values**: Rely on `--spacing-*` tokens for all layout and element spacing to maintain consistency.</li>
+                <li><span class="icon icon-x">❌</span> **Don't mix semantic meanings**: Ensure the color and context align (e.g., don't use a success color for an error state).</li>
+            </ul>
+
+            <h3>Decision Trees</h3>
+            <h4>Choosing Colors</h4>
+            <ul>
+                <li><span class="icon icon-check">✅</span> **Are you styling an interactive element (button, link, input state)?**
+                    <ul>
+                        <li><span class="icon icon-check">➡️</span> Use `interactive-*` tokens (e.g., `--interactive-primary`, `--interactive-destructive-hover`).</li>
+                    </ul>
+                </li>
+                <li><span class="icon icon-check">✅</span> **Are you indicating a status or meaning (success, warning, error, info)?**
+                    <ul>
+                        <li><span class="icon icon-check">➡️</span> Use `semantic-*` tokens (e.g., `--semantic-success`, `--semantic-error`).</li>
+                    </ul>
+                </li>
+                <li><span class="icon icon-check">✅</span> **Are you styling a background, card, or border?**
+                    <ul>
+                        <li><span class="icon icon-check">➡️</span> Use `surface-*` tokens (e.g., `--surface-background`, `--surface-card`).</li>
+                    </ul>
+                </li>
+                <li><span class="icon icon-check">✅</span> **Are you styling text?**
+                    <ul>
+                        <li><span class="icon icon-check">➡️</span> Use `text-*` tokens (e.g., `--text-primary`, `--text-muted`).</li>
+                    </ul>
+                </li>
+                <li><span class="icon icon-x">❌</span> If none of the above, consult the Design System team. Avoid using primitive colors directly.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
