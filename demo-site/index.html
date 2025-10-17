@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qualia Design Tokens – Visual Demo</title>
+  <link rel="stylesheet" href="../tokens/qualia-tokens.css" />
+  <style>
+    body {
+      font-family: var(--font-family-primary);
+      margin: 0;
+      padding: var(--spacing-lg);
+      background: var(--surface-muted);
+      color: var(--text-primary);
+    }
+    h1, h2 {
+      margin: var(--spacing-md) 0;
+    }
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: var(--spacing-md);
+    }
+    .swatch {
+      border: 1px solid var(--surface-border);
+      border-radius: var(--border-radius-sm);
+      overflow: hidden;
+      background: var(--surface-card);
+      box-shadow: var(--shadow-sm);
+    }
+    .swatch-color {
+      width: 100%;
+      padding-top: 75%;
+    }
+    .swatch-label {
+      padding: var(--spacing-sm);
+      font-size: var(--font-size-sm);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Qualia Design Tokens – Visual Demo</h1>
+  <p>This page renders live values from <code>qualia-tokens.css</code>. Use it to review colors, spacing, and typography.</p>
+
+  <h2>Primitive Colors</h2>
+  <div class="token-grid" id="primitiveGrid"></div>
+
+  <h2>Brand Colors</h2>
+  <div class="token-grid" id="brandGrid"></div>
+
+  <h2>Semantic Colors</h2>
+  <div class="token-grid" id="semanticGrid"></div>
+
+  <script>
+    const primitive = [
+      'primitive-gray-50','primitive-gray-100','primitive-gray-200','primitive-gray-300','primitive-gray-400','primitive-gray-500','primitive-gray-600','primitive-gray-700','primitive-gray-800','primitive-gray-900',
+      'primitive-red-50','primitive-red-100','primitive-red-200','primitive-red-300','primitive-red-400','primitive-red-500','primitive-red-600','primitive-red-700','primitive-red-800','primitive-red-900',
+      'primitive-green-50','primitive-green-100','primitive-green-200','primitive-green-300','primitive-green-400','primitive-green-500','primitive-green-600','primitive-green-700','primitive-green-800','primitive-green-900',
+      'primitive-blue-50','primitive-blue-100','primitive-blue-200','primitive-blue-300','primitive-blue-400','primitive-blue-500','primitive-blue-600','primitive-blue-700','primitive-blue-800','primitive-blue-900',
+      'primitive-orange-50','primitive-orange-100','primitive-orange-200','primitive-orange-300','primitive-orange-400','primitive-orange-500','primitive-orange-600','primitive-orange-700','primitive-orange-800','primitive-orange-900'
+    ];
+    const brand = ['brand-primary','brand-secondary','brand-accent'];
+    const semantic = ['semantic-success','semantic-warning','semantic-error','semantic-info'];
+
+    function render(list, containerId){
+      const container = document.getElementById(containerId);
+      list.forEach(token=>{
+        const swatch = document.createElement('div');
+        swatch.className='swatch';
+        const color = document.createElement('div');
+        color.className='swatch-color';
+        color.style.background = `var(--${token})`;
+        const label = document.createElement('div');
+        label.className='swatch-label';
+        label.textContent = token;
+        swatch.appendChild(color);
+        swatch.appendChild(label);
+        container.appendChild(swatch);
+      });
+    }
+    render(primitive,'primitiveGrid');
+    render(brand,'brandGrid');
+    render(semantic,'semanticGrid');
+  </script>
+</body>
+</html>
